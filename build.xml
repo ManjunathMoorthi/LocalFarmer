@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- WARNING: Eclipse auto-generated file.
+              Any modifications will be overwritten.
+              To include a user specific buildfile here, simply create one in the same
+              directory with the processing instruction <?eclipse.ant.import?>
+              as the first entry and export the buildfile again. -->
+<project basedir="." default="build" name="" xmlns:jacoco="antlib:org.jacoco.ant">
+    <taskdef uri="antlib:org.jacoco.ant" resource="org/jacoco/ant/antlib.xml">
+        <classpath path="WebContent/WEB-INF/lib/jacocoant.jar" />
+    </taskdef>
+    <property environment="env"/>
+   
+    <property name="junit.output.dir" value="junit"/>
+    <property name="debuglevel" value="source,lines,vars"/>
+    <property name="target" value="1.8"/>
+    <property name="source" value="1.8"/>
+	
+	<property name="result.dir" location="junit/jcoverage"/>
+		<property name="result.classes.dir" location="${result.dir}/classes"/>
+		<property name="result.report.dir" location="${result.dir}/site/jacoco"/>
+	<property name="result.exec.file" location="${result.dir}/jacoco.exec"/>
+	
+    <path id="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath">
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/catalina-storeconfig.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-jni.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/servlet-api.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/jasper-el.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/catalina-ant.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-util-scan.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/ecj-4.5.1.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/websocket-api.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/el-api.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/catalina-tribes.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-dbcp.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/jasper.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/annotations-api.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/jaspic-api.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/catalina-ha.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-coyote.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-websocket.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/jsp-api.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-jdbc.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-api.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-i18n-es.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-i18n-fr.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-i18n-ja.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/tomcat-util.jar"/>
+        <pathelement location="../../../../opt/apache-tomcat-8.5.6/lib/catalina.jar"/>
+    </path>
+    <path id="Web App Libraries.libraryclasspath">
+        <pathelement location="WebContent/WEB-INF/lib/aopalliance-repackaged-2.4.0-b34.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/asm-debug-all-5.0.4.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-beanutils-1.9.2-javadoc.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-beanutils-1.9.2-sources.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-beanutils-1.9.2-test-sources.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-beanutils-1.9.2-tests.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-beanutils-1.9.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-collections-3.2.2-javadoc.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-collections-3.2.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-lang-2.6-javadoc.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-lang-2.6-sources.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-lang-2.6.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-logging-1.2-javadoc.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/commons-logging-1.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/gson-2.6.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hamcrest-core-1.3.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hk2-api-2.4.0-b34.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hk2-locator-2.4.0-b34.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/hk2-utils-2.4.0-b34.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jackson-annotations-2.0.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jackson-core-2.6.3.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jackson-databind-2.1.4.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jacocoant.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javassist-3.18.1-GA.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.annotation-api-1.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.inject-2.4.0-b34.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.servlet-api-3.0.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/javax.ws.rs-api-2.0.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jaxb-api-2.2.7.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jersey-client.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jersey-common.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jersey-container-servlet-core.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jersey-container-servlet.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jersey-guava-2.22.2.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jersey-media-jaxb.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/jersey-server.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/junit-4.12.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/org.osgi.core-4.2.0.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/osgi-resource-locator-1.0.1.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/persistence-api-1.0.jar"/>
+        <pathelement location="WebContent/WEB-INF/lib/validation-api-1.1.0.Final.jar"/>
+    </path>
+    <path id="EAR Libraries.libraryclasspath"/>
+    <path id="lf2u.classpath">
+        <pathelement location="build/classes"/>
+        <path refid="Apache Tomcat v8.5 [Apache Tomcat v8.5].libraryclasspath"/>
+        <path refid="Web App Libraries.libraryclasspath"/>
+        <path refid="EAR Libraries.libraryclasspath"/>
+    </path>
+    <target name="init">
+        <mkdir dir="build/classes"/>
+        <copy includeemptydirs="false" todir="build/classes">
+            <fileset dir="src">
+                <exclude name="**/*.launch"/>
+                <exclude name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="clean">
+    	<delete dir="build/classes"/>
+    		<delete dir="junit"/>
+    </target>
+    <target depends="clean" name="cleanall"/>
+    <target depends="build-subprojects,build-project" name="build"/>
+    <target name="build-subprojects"/>
+    <target depends="init" name="build-project">
+    	
+        <echo message="${ant.project.name}: ${ant.file}"/>
+        <javac debug="true" debuglevel="${debuglevel}" destdir="build/classes" includeantruntime="false" source="${source}" target="${target}">
+            <src path="src"/>
+            <classpath refid="lf2u.classpath"/>
+        </javac>
+    </target>
+    <target description="Build all projects which reference this project. Useful to propagate changes." name="build-refprojects"/>
+	<target name="Customer">
+	        <mkdir dir="${junit.output.dir}"/>
+	    	<jacoco:coverage  destfile="junit/jcoverage/jacoco.exec">
+		        <junit fork="yes" printsummary="withOutAndErr">
+		            <formatter type="xml"/>
+		            <test name="Testing.Customer" todir="${junit.output.dir}"/>
+		            <classpath refid="lf2u.classpath"/>
+		        </junit>
+	    	</jacoco:coverage>
+	    </target>
+	    <target name="Farmertest">
+	        <mkdir dir="${junit.output.dir}"/>
+	    	<jacoco:coverage  destfile="junit/jcoverage/jacoco.exec">
+		        <junit fork="yes" printsummary="withOutAndErr">
+		            <formatter type="xml"/>
+		            <test name="Testing.Farmertest" todir="${junit.output.dir}"/>
+		            <classpath refid="lf2u.classpath"/>
+		        </junit>
+	    	</jacoco:coverage>
+	    </target>
+	    <target name="managertest">
+	        <mkdir dir="${junit.output.dir}"/>
+	    	<jacoco:coverage  destfile="junit/jcoverage/jacoco.exec">
+		        <junit fork="yes" printsummary="withOutAndErr">
+		            <formatter type="xml"/>
+		            <test name="Testing.managertest" todir="${junit.output.dir}"/>
+		            <classpath refid="lf2u.classpath"/>
+		        </junit>
+	    	</jacoco:coverage>
+		</target>
+	<target name="delivery">
+		        <mkdir dir="${junit.output.dir}"/>
+		    	<jacoco:coverage  destfile="junit/jcoverage/jacoco.exec">
+			        <junit fork="yes" printsummary="withOutAndErr">
+			            <formatter type="xml"/>
+			            <test name="Testing.delivery" todir="${junit.output.dir}"/>
+			            <classpath refid="lf2u.classpath"/>
+			        </junit>
+		    	</jacoco:coverage>
+			</target>
+	<target name="search">
+		        <mkdir dir="${junit.output.dir}"/>
+		    	<jacoco:coverage  destfile="junit/jcoverage/jacoco.exec">
+			        <junit fork="yes" printsummary="withOutAndErr">
+			            <formatter type="xml"/>
+			            <test name="Testing.search" todir="${junit.output.dir}"/>
+			            <classpath refid="lf2u.classpath"/>
+			        </junit>
+		    	</jacoco:coverage>
+			</target>
+	<target name="testrunner">
+			        <mkdir dir="${junit.output.dir}"/>
+			    	<jacoco:coverage  destfile="junit/jcoverage/jacoco.exec">
+				        <junit fork="yes" printsummary="withOutAndErr">
+				            <formatter type="xml"/>
+				            <test name="Testing.search" todir="${junit.output.dir}"/>
+				            <classpath refid="lf2u.classpath"/>
+				        </junit>
+			    	</jacoco:coverage>
+				</target>
+	
+	
+	    <target name="junitreport">
+	        <junitreport todir="${junit.output.dir}">
+	            <fileset dir="${junit.output.dir}">
+	                <include name="TEST-*.xml"/>
+	            </fileset>
+	            <report format="frames" todir="${junit.output.dir}"/>
+	        </junitreport>
+	    </target>
+		<target name="report">
+			<jacoco:report>
+			    <executiondata>
+			        <file file="junit/jcoverage/jacoco.exec" />
+			    </executiondata>
+			 
+			    <structure name="AntTestReporting">
+			        <classfiles>
+			            <fileset dir="build/classes">
+			                <include name="**/*.class" />
+			                <!-- Exclude classes necessary for testing only from the code coverage report-->
+			                <exclude name="**/*Testing/*.class" />
+			            	<exclude name="**/*DataGeneration/*.class" />
+			            	<exclude name="**/LF2UService/*.class" />
+			            	
+			            			            	
+			                <!-- Exclude inner classes -->
+			                <exclude name="**/*$*.class" />
+			            </fileset>
+			        </classfiles>
+			    </structure>
+			 
+			    <html destdir="junit/CoverageReports" />
+			</jacoco:report>
+		</target>
+
+		<target name="war">
+			<war destfile="lf2u.war" webxml="WebContent/WEB-INF/web.xml">
+				<fileset dir="WebContent"/>
+				<lib dir="WebContent/WEB-INF/lib"/>
+				<classes dir="build/classes"/>
+			</war>
+		</target>
+	</project>
